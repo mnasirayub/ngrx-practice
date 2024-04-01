@@ -1,0 +1,47 @@
+<div class="container-fluid p-3">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Products</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Products List</li>
+    </ol>
+  </nav>
+  <div class="top">
+    <h3 class="mb-4">Products List</h3>
+    <button class="btn btn-sm btn-outline-primary" type="button"><i class="fa-solid fa-plus"></i> Product</button>
+  </div>
+  <div class="py-2">
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Features</th>
+            <th scope="col">Price</th>
+            <!-- <th scope="col">Keywords</th> -->
+            <!-- <th scope="col">Url</th> -->
+            <th scope="col">Category</th>
+            <th scope="col">Sub-Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products.products | paginate: { itemsPerPage: 20, currentPage: p}">
+            <td class="align-middle">{{ product?.id }}</td>
+            <td class="align-middle">{{ product?.name }}</td>
+            <td class="align-middle">{{ product?.description | slice:0:80 }}</td>
+            <td class="align-middle">{{ product?.features |slice:0:50 }}</td>
+            <td class="align-middle">{{ product?.price }}</td>
+            <!-- <td class="align-middle">{{ product?.keywords }}</td> -->
+            <!-- <td class="align-middle">{{ product?.url }}</td> -->
+            <td class="align-middle">{{ product?.category }}</td>
+            <td class="align-middle">{{ product?.subcategory }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="w-100 text-end">
+        <pagination-controls (pageChange)="pageChanged(p=$event)"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+table thead, table thead tr th{
+  background-color: var(--bg-200) !important;
+}
+
+table thead tr th{
+  font-size: 13px;
+}
+
+table thead tr td{
+  font-size: 12px;
+}

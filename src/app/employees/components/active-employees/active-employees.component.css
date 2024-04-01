@@ -1,0 +1,46 @@
+table thead, table thead tr th{
+  background-color: var(--bg-200) !important;
+}
+
+table thead tr th{
+  font-size: 13px;
+}
+
+table tbody tr td{
+  font-size: 13px;
+}
+
+img{
+  width: 40px;
+  height: auto;
+}
+
+h5{
+  font-size: 15px;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--text-100);
+}
+small{
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 12px;
+  color: var(--text-200);
+}
+
+.infoStack{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.infoStack .info{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.badge:hover{
+  cursor: pointer;
+}

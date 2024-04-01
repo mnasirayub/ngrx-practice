@@ -1,0 +1,89 @@
+<div class="mainSidebar"
+  [ngStyle]="themeColors?.colorOne? {'background-color':themeColors?.colorOne}:{'background-color':'var(--blue-600)'}">
+  <div class="logo p-2 mb-4"><img src="../assets/imgs/icons8-dev-96.png" class="img-fluid"></div>
+  <ul class="midSideBar mb-4">
+    <li>
+      <a routerLink="./employees" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+        [ngStyle]="themeColors?.colorTwo? {'background-color':themeColors?.colorTwo}:{'background-color':'334d7c'}"><i
+          class="fa-solid fa-users"></i></a>
+      <small>employees</small>
+    </li>
+    <li>
+      <a routerLink="/products" routerLinkActive="active"
+        [ngStyle]="themeColors?.colorTwo? {'background-color':themeColors?.colorTwo}:{'background-color':'334d7c'}"><i
+          class="fa-solid fa-store"></i></a>
+      <small>products</small>
+    </li>
+    <!-- <li>
+      <a href="#"
+        [ngStyle]="themeColors?.colorTwo? {'background-color':themeColors?.colorTwo}:{'background-color':'334d7c'}"><i
+          class="fa-solid fa-code"></i></a>
+      <small>dsc</small>
+    </li> -->
+  </ul>
+
+  <ul class="bottomSideBar">
+    <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <a [ngStyle]="themeColors?.colorTwo? {'background-color':themeColors?.colorTwo}:{'background-color':'334d7c'}"><i
+          class="fa-solid fa-user"></i></a>
+      <!-- <img src="https://lh3.googleusercontent.com/a/ALm5wu26mVBMvhslkkrpWoeXMddCWTjJB3SxTV7ha59Z=s96-c" class="img-fluid userImg rounded"> -->
+      <small>Profile</small>
+    </li>
+    <li>
+      <a routerLink="/settings" routerLinkActive="active"
+        [ngStyle]="themeColors?.colorTwo? {'background-color':themeColors?.colorTwo}:{'background-color':'334d7c'}">
+        <i class="bx bxs-cog"></i></a>
+      <small>settings</small>
+    </li>
+    <!-- <li class="logout" (click)="onLogout()">
+      <a><i class="fa-solid fa-power-off"></i></a>
+      <small>Logout</small>
+    </li> -->
+  </ul>
+</div>
+<div class="content" [ngClass]="{'authorizedCl':authorized, 'notAuthorizedCl':!authorized}">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+<!-- profile-side-canvas -->
+<div class="offcanvas offcanvas-end profileCanvas mt-5 m-4 rounded" tabindex="-1" id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">My Profile</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="row p-1">
+      <div class="col">
+        <div class="topBox w-100">
+          <div class="userInfo mb-3 pb-3 border-bottom">
+            <img class="img-fluid rounded border mb-2"
+              src="https://static.tildacdn.com/tild3839-3639-4233-b338-326331623761/743f6c9cefd905648ba6.jpg"><br>
+            <h4 class="mb-0">Muhammad Nasir Ayub</h4>
+            <small>Software Engineer | Full Stack Developer</small>
+          </div>
+          <strong>Info</strong>
+          <table class="table table-borderless mt-3">
+            <tr>
+              <td>Mobile</td>
+              <td>+923039590987</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>mnasirayyb@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Registered</td>
+              <td>Mar 23 2024</td>
+            </tr>
+          </table>
+        </div>
+        <div class="bottomBox d-flex align-items-center justify-content-center w-100">
+          <img src="../assets/imgs/undraw_programming_re_kg9v.svg" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

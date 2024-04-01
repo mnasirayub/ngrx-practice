@@ -1,0 +1,13 @@
+.nav-item, .nav-link {
+  cursor: pointer;
+}
+
+.active-sub-child {
+  border: none;
+  color: var(--text-100) !important;
+  border-bottom: 2px solid var(--text-100);
+}
+
+.nav-item .nav-link {
+  color: var(--text-200) !important;
+}

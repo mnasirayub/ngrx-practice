@@ -1,0 +1,25 @@
+<div class="container-fluid p-3">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Employees</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Employees List</li>
+    </ol>
+  </nav>
+  <div class="top">
+    <h3 class="mb-4">Employees List</h3>
+    <button class="btn btn-sm btn-outline-primary" type="button" routerLink="../add-new-employee"><i class="fa-solid fa-plus"></i> Employee</button>
+  </div>
+
+  <!-- <ul class="nav nav-underline border-bottom pb--0">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="./active" routerLinkActive="active-sub-child" [routerLinkActiveOptions]="{exact:true}" aria-current="page">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="./in-active" routerLinkActive="active-sub-child">In-Active</a>
+    </li>
+  </ul>
+
+  <router-outlet></router-outlet> -->
+
+  <app-active-employees></app-active-employees>
+</div>

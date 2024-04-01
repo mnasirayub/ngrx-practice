@@ -1,0 +1,97 @@
+.sideBar {
+  width: 175px;
+  min-height: 100vh;
+  height: auto;
+  max-height: 100vh;
+  background-color: var(--bg-200) !important;
+  position: fixed;
+  border-left: 1px solid var(--bg-300);
+  transition: .3s ease-in-out;
+}
+
+.content {
+  width: auto 100%;
+  margin-left: 175px;
+  transition: 0.3s ease-in-out;
+}
+
+.sideBar .col-4 img {
+  width: 100%;
+  height: auto;
+}
+
+.sideBar .box .col {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.sideBar .box strong {
+  font-size: 12px;
+  margin: 0;
+}
+
+.sideBar .box small {
+  font-size: 10px;
+  color: var(--text-200);
+}
+
+li small {
+  font-size: 10px;
+  color: var(--text-200);
+}
+
+li .icon {
+  background-color: var(--bg-100);
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+}
+
+.nav-link,
+.nav-link .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.active-child {
+  background-color: var(--bg-300);
+  transition: .3s ease-in-out;
+}
+
+.active-child .icon {
+  background-color: var(--bg-300)
+}
+
+.collapse-icon {
+  position: absolute;
+  top: 10px;
+  left: 162px;
+  background-color: var(--bg-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-100);
+  transition: .3s ease-in-out;
+}
+
+
+.sideBar.collapsed {
+  display: none !important;
+  width: 0px !important;
+}
+.content.collapsed{
+  margin-left: 0px!important;
+}
+.collapse-icon.collapsed{
+  left: -13px;
+}

@@ -1,0 +1,65 @@
+<main>
+  <div class="container p-3">
+    <h3 class="text-center mb-5">User Registration Form</h3>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div class="row mb-2">
+        <div class="col">
+          <label>Employee Code</label>
+          <input type="text" class="form-control" placeholder="A1" formControlName="employeeCode" required>
+        </div>
+        <div class="col">
+          <label>Username</label>
+          <input type="text" class="form-control" placeholder="Username" formControlName="userName" required>
+        </div>
+        <div class="col">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="example@mail.com" formControlName="emailAddress"
+            required>
+        </div>
+        <div class="col">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Minimum 6 Characters" formControlName="password"
+            required (keyup)="validate()">
+          <div class="text-danger alerts-div" *ngIf="errors.length>0 && employeeForm.get('password').value.length>0">
+            <ul>
+              <li *ngFor="let error of errors"><small>{{ error }}</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <label>Job Title</label>
+          <input type="text" class="form-control" placeholder="Software Engineer" formControlName="jobTitleName"
+            required>
+        </div>
+        <div class="col">
+          <label>Avatar Url</label>
+          <input type="url" class="form-control" formControlName="image" placeholder="https://......" required>
+        </div>
+        <div class="col">
+          <label>Date of Joining</label>
+          <input type="date" class="form-control" formControlName="dateOfJoining" required>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <label>Skills</label>
+        <div class="row" formArrayName="skills">
+          <div class="col-lg-2 col-md-2 col-sm-12 mb-2"
+            *ngFor="let sk of employeeForm.get('skills').controls; let i = index;" [formGroupName]="i">
+            <input type="text" class="form-control" placeholder="skill" formControlName="skill">
+          </div>
+          <div class="col-1 text-end align-middle pt-1">
+            <button class="btn btn-sm btn-outline-secondary" type="button" (click)="onAddSkill()"><i
+                class="fa-solid fa-plus"></i> Skill</button>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col text-end">
+          <button class="btn btn-sm btn-outline-primary" type="submit">Save Details</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>

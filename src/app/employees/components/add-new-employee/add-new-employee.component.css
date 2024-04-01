@@ -1,0 +1,13 @@
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  height: auto;
+  max-height: 100vh;
+  position: relative;
+}
+
+.alerts-div small{
+  font-display: 7px !important;
+}

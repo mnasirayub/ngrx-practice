@@ -1,0 +1,36 @@
+<div class="py-2">
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Employee</th>
+          <th scope="col">Email</th>
+          <th scope="col">Skills</th>
+          <th scope="col">Date of Joining</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees.employees">
+          <td class="align-middle">{{ emp?.employeeCode }}</td>
+          <td class="align-middle">
+            <div class="infoStack">
+              <img class="img-fluid rounded-circle" src="{{ emp?.image }}" alt="{{emp?.userName}}">
+              <div class="info ms-2">
+                <h5>{{ emp?.userName }}</h5>
+                <small>{{ emp?.jobTitleName }}</small>
+              </div>
+            </div>
+          </td>
+          <td class="align-middle"><a href="mailto:{{ emp?.emailAddress }}">{{ emp?.emailAddress }}</a></td>
+          <td class="align-middle"><span class="badge me-1" *ngFor="let stack of emp?.techstack" [style.background-color]="getRandomColor(stack)">{{ stack|uppercase }}</span></td>
+          <td class="align-middle">{{ emp?.dateOfJoining | date:"mediumDate" }}</td>
+          <td class="align-middle">
+            <span (click)="onStatusChange(emp)" class="badge" [ngClass]="{'bg-success':emp?.status==='active', 'bg-danger':emp?.status==='in-active'}">{{ emp?.status | titlecase }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

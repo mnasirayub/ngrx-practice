@@ -1,0 +1,224 @@
+.mainSidebar,
+.mainSidebar .midSideBar li,
+.mainSidebar .bottomSideBar li {
+  display: flex;
+  align-items: center;
+}
+
+.mainSidebar {
+  margin: 0;
+  padding: 0;
+  width: 3.9%;
+  background-color: var(--bg-200) !important;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.mainSidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.mainSidebar .midSideBar li,
+.mainSidebar .bottomSideBar li {
+  width: 60px;
+  height: 70px;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.mainSidebar .midSideBar li a,
+.mainSidebar .bottomSideBar li a {
+  color:var(--text-200);
+  width: 45px;
+  height: 45px;
+  background-color: var(--bg-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: .3s ease-in-out;
+}
+
+.mainSidebar .midSideBar li small,
+.mainSidebar .bottomSideBar li small {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-100);
+  margin-top: 5px;
+}
+
+.mainSidebar li:hover a:not(.active),
+.mainSidebar .bottomSideBar li:hover a:not(.active) {
+  background-color: var(--bg-100);
+  color: var(--text-200);
+}
+
+.mainSidebar .midSideBar li .active,
+.mainSidebar .bottomSideBar li .active {
+  background-color: var(--bg-100) !important;
+}
+
+/* content div styling */
+.content {
+  width: 96.1%;
+  margin-left: 80px;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  background-color: white;
+  /* background-color: #E5E5E5; */
+}
+
+.logout a {
+  background-color: #ff4c4c !important;
+}
+
+.authorizedCl {
+  width: 95%;
+  margin-left: 75px;
+}
+
+.notAuthorizedCl {
+  width: 100%;
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    width: auto;
+    margin-left: 55px;
+  }
+
+  .mainSidebar {
+    width: 55px;
+  }
+
+  .mainSidebar .midSideBar li,
+  .mainSidebar .bottomSideBar li {
+    width: 40px;
+    height: 50px;
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .mainSidebar .midSideBar li a,
+  .mainSidebar .bottomSideBar li i {
+    width: 35px;
+    height: 45px;
+    font-size: 12px;
+  }
+
+  .mainSidebar .midSideBar li small,
+  .mainSidebar .bottomSideBar li small {
+    font-size: 9px;
+  }
+
+  .authorizedCl {
+    width: auto;
+    margin-left: 55px;
+  }
+
+  .notAuthorizedCl {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1250px) {
+  .content {
+    width: auto;
+    margin-left: 65px;
+  }
+
+  .mainSidebar {
+    width: 65px;
+  }
+
+  .mainSidebar .midSideBar li,
+  .mainSidebar .bottomSideBar li {
+    width: 50px;
+    height: 60px;
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .mainSidebar .midSideBar li a,
+  .mainSidebar .bottomSideBar li i {
+    width: 45px;
+    height: 55px;
+  }
+
+  .mainSidebar .midSideBar li small,
+  .mainSidebar .bottomSideBar li small {
+    font-size: 9px;
+  }
+
+  .authorizedCl {
+    width: auto;
+    margin-left: 65px;
+  }
+
+  .notAuthorizedCl {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.mainSidebar .midSideBar li a.active::after,
+.mainSidebar .bottomSideBar li a.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent var(--text-200) transparent transparent;
+}
+
+.offcanvas.offcanvas-end.profileCanvas {
+  height: 90vh !important;
+}
+.offcanvas.offcanvas-end.profileCanvas .row .col{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 78vh;
+}
+.offcanvas.offcanvas-end.profileCanvas .userInfo img{
+  width: 80px;
+  height: auto;
+}
+.offcanvas.offcanvas-end.profileCanvas .userInfo h4{
+  color: var(--blue-600);
+  font-weight: bold;
+}
+.offcanvas.offcanvas-end.profileCanvas .userInfo small{
+  font-size: 11px;
+}
+.offcanvas.offcanvas-end.profileCanvas strong{
+  color: var(--linkedIn-100);
+}
+.offcanvas.offcanvas-end.profileCanvas table td{
+  width: 50%;
+  font-size: 12px;
+  padding: 7px;
+}
+
+
+/* .userImg{
+  width: 43px;
+  height: 47px;
+} */
+
+
+.bottomBox img{
+opacity: 0.6;
+}
