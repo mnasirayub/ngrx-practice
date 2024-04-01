@@ -1,0 +1,2 @@
+# ngrx-practice
+Learning NgRX
